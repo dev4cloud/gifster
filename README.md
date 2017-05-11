@@ -1,4 +1,4 @@
-# Howdy, this is _Gifster_!
+# Howdy, this is _Gifster_!!
 
 ![Travis CI status](https://travis-ci.org/dev4cloud/gifster.svg?branch=master)
 
