@@ -1,9 +1,19 @@
 dist: trusty
 
+sudo: required
+
+services:
+  - docker
+
 language: java
 
 jdk:
   - openjdk8
+
+after_success:
+  - docker build -t $DOCKER_HUB_ORG_NAME/$DOCKER_HUB_REPO_NAME:latest .
+  - docker login -u=$DOCKER_HUB_USERNAME -p=$DOCKER_HUB_PWD
+  - docker push $DOCKER_HUB_ORG_NAME/$DOCKER_HUB_REPO_NAME:latest
 
 notifications:
   email: false
